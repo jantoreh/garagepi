@@ -14,7 +14,7 @@ def capture():
         stream.seek(0)
         return stream
 
-async def video()
+async def video():
     stream = io.BytesIO()
     count = 0
     for _ in camera.capture_continuous(stream, format="png", use_video_port=True):
