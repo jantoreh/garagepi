@@ -1,7 +1,6 @@
 from picamera import PiCamera
 import numpy as np
 import io
-from fastapi.responses import StreamingResponse
 
 camera = PiCamera()
 camera.resolution = (320, 240)

@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import io
 from fastapi import FastAPI
-from fastapi.responses StreamingResponse
+from fastapi.responses import StreamingResponse
 from api.cam import capture, video
 
 app = FastAPI()
