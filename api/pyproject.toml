@@ -6,10 +6,10 @@ authors = ["jantoreh <jantorehorn@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-fastapi = "^0.62.0"
-numpy = "^1.18"
-Pillow = "^8.0.0"
-uvicorn = "^0.12.0"
+fastapi = "*"
+numpy = "*"
+Pillow = "*"
+uvicorn = "*"
 
 [tool.poetry.dev-dependencies]
 

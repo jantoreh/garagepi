@@ -99,7 +99,7 @@ standard = ["websockets (>=8.0.0,<9.0.0)", "watchgod (>=0.6,<0.7)", "python-dote
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "20049c9e92dbdebf4e7a7a89504f5e448bae6c747fa2af65d5dd8b67cf5fb101"
+content-hash = "510727e39666828cced35d3dfa2abf6a3a0c3348391c400352a6bbb1afdd032e"
 
 [metadata.files]
 click = [
