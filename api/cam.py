@@ -13,4 +13,15 @@ def capture():
     for _ in camera.capture_continuous(stream, format="png", use_video_port=True):
         stream.truncate()
         stream.seek(0)
-        return StreamingResponse(stream, media_type="image/png")
+        return stream
+
+async def video()
+    stream = io.BytesIO()
+    count = 0
+    for _ in camera.capture_continuous(stream, format="png", use_video_port=True):
+        stream.truncate()
+        stream.seek(0)
+        yield stream
+        count += 1
+        if count >= 100:
+            break
