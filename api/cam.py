@@ -1,26 +1,19 @@
-from picamera import PiCamera
-import numpy as np
 import io
+from PIL import Image
+import numpy as np
+import cv2
 
-camera = PiCamera()
-camera.resolution = (320, 240)
-camera.start_preview()
+cam = cv2.VideoCapture(0)
 
 
-def capture():
-    stream = io.BytesIO()
-    for _ in camera.capture_continuous(stream, format="png", use_video_port=True):
-        stream.truncate()
-        stream.seek(0)
-        return stream
+def get_single_image():
+    _, img = cam.read()
+    return img
 
-async def video():
-    stream = io.BytesIO()
-    count = 0
-    for _ in camera.capture_continuous(stream, format="png", use_video_port=True):
-        stream.truncate()
-        stream.seek(0)
-        yield stream
-        count += 1
-        if count >= 100:
-            break
+
+def convert_numpy_image_to_bytes(array: np.ndarray):
+    image = Image.fromarray(array)
+    byte_io = io.BytesIO()
+    image.save(byte_io, "png")
+    byte_io.seek(0)
+    return byte_io

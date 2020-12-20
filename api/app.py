@@ -1,17 +1,16 @@
-from PIL import Image
-import numpy as np
 import io
+
+import numpy as np
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
-from api.cam import capture, video
+
+from api.cam import convert_numpy_image_to_bytes, get_single_image
 
 app = FastAPI()
 
 
 @app.get("/capture")
 async def _capture():
-    return StreamingResponse(capture(), media_type="image/png")
-
-@app.get("/video")
-async def _video():
-    return StreamingResponse(video(), media_type="video/mp4")
+    image = get_single_image()
+    image = convert_numpy_image_to_bytes(image)
+    return StreamingResponse(image, media_type="image/png")
