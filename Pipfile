@@ -8,6 +8,7 @@ opencv-python = "*"
 numpy = "*"
 Pillow = "*"
 FastAPI = "*"
+uvicorn = "*"
 
 [dev-packages]
 black = "*"
