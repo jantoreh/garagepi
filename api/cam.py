@@ -11,7 +11,7 @@ def get_single_image():
     return img
 
 
-def convert_numpy_image_to_bytes(array: np.ndarray):
+def convert_image_to_bytes(array: np.ndarray):
     image = Image.fromarray(array)
     byte_io = io.BytesIO()
     image.save(byte_io, "png")
