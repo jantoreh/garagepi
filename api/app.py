@@ -10,6 +10,13 @@ from api.cam import convert_image_to_bytes, get_single_image
 app = FastAPI()
 
 
+@app.get("/alive")
+async def _capture():
+    image = get_single_image()
+    image = convert_image_to_bytes(image)
+    return jsonify("I'm Alive"), 200
+
+
 @app.get("/capture")
 async def _capture():
     image = get_single_image()
