@@ -1,5 +1,11 @@
 # TuftCam
 
+## Install
+
+```bash
+pip3 install -r api/requirements.txt
+```
+
 ## Launch app
 
 Run from project root:
