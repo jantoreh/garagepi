@@ -2,7 +2,7 @@ import io
 
 import numpy as np
 import uvicorn
-from fastapi import FastAPI, jsonify
+from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 
 from api.cam import convert_image_to_bytes, get_single_image
@@ -14,7 +14,7 @@ app = FastAPI()
 async def _capture():
     image = get_single_image()
     image = convert_image_to_bytes(image)
-    return jsonify("I'm Alive"), 200
+    return "Hi"
 
 
 @app.get("/capture")
