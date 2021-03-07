@@ -2,7 +2,7 @@ import io
 
 import numpy as np
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, jsonify
 from fastapi.responses import StreamingResponse
 
 from api.cam import convert_image_to_bytes, get_single_image
