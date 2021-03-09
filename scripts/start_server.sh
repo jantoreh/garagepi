@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_HOME=$HOME/projects/tuftCam
+PROJECT_HOME=/home/pi/projects/tuftCam
 
 if curl http://0.0.0.0:5000; then
     echo "server is up"; 
