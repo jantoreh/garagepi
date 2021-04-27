@@ -23,7 +23,7 @@ async def _capture():
 @app.get("/door", status_code=200)
 async def _trigger_door():
     trigger_right_garage_door()
-    return
+    return "Something happening?"
 
 
 
