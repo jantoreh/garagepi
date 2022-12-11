@@ -1,5 +1,0 @@
-fastapi
-pillow
-numpy
-uvicorn
-opencv-python
