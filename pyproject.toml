@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "traffic-cam"
+name = "garagepi"
 version = "0.1.0"
 description = ""
 authors = ["jantoreh <jantorehorn@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "3.7.*"
+python = "3.9.*"
 fastapi = "*"
 numpy = "*"
 uvicorn = "*"
