@@ -1,4 +1,4 @@
-# TuftCam
+# Garage PI
 
 ## Install
 
@@ -8,7 +8,7 @@ pip3 install -r requirements.txt
 
 ## Launch app
 
-Run from project root:
+Start server from project root:
 
 ```bash
 python3 app.py
