@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 
-from lib.garage_doors import trigger_right_garage_door
+from lib.garage_doors import trigger_right_garage_door, trigger_left_garage_door
 
 app = FastAPI()
 
@@ -11,10 +11,16 @@ async def _alive():
     return "Hi"
 
 
-@app.get("/door", status_code=200)
+@app.get("/door/right", status_code=200)
 async def _trigger_door():
     trigger_right_garage_door()
-    return "Something happening?"
+    return "Right door triggered"
+
+
+@app.get("/door/left", status_code=200)
+async def _trigger_door():
+    trigger_left_garage_door()
+    return "Left door triggered"
 
 
 if __name__ == "__main__":
