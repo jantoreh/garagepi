@@ -1,7 +1,5 @@
 #!/bin/bash
 
-PROJECT_HOME=/home/pi/garagepi
-
 if curl http://0.0.0.0:5000; then
     echo "server is up"; 
 else
