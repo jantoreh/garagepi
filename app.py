@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
+from fastapi_utils.tasks import repeat_every
 
 from lib.garage_doors import trigger_right_garage_door, trigger_left_garage_door
 from lib.camera import capture_image
@@ -25,6 +26,7 @@ async def _trigger_door():
 
 
 @app.get("/camera/capture", status_code=200)
+@repeat_every(seconds=60)
 async def _capture_image():
     capture_image("image.jpg")
     return "Captured new image"
