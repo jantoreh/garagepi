@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi_utils.tasks import repeat_every
 
 from lib.garage_doors import trigger_right_garage_door, trigger_left_garage_door
-from lib.camera import capture_image
+from lib.camera import detect_cars
 
 app = FastAPI()
 
@@ -26,9 +26,10 @@ async def _trigger_door():
 
 
 @app.get("/camera/capture", status_code=200)
-@repeat_every(seconds=60)
+@app.on_event("startup")
+@repeat_every(seconds=2)
 async def _capture_image():
-    capture_image("image.jpg")
+    detect_cars()
     return "Captured new image"
 
 
