@@ -32,7 +32,7 @@ def get_frame(width=600, height=400):
 def detect_cars():
     frame = get_frame()
     frame = frame[190:280, :]
-    fg_mask = bg_subtractor.apply(frame, 0.01)
+    fg_mask = bg_subtractor.apply(frame, 0.001)
     fg_mask = cv2.morphologyEx(fg_mask, cv2.MORPH_OPEN, kernel)
     contours, hierarchy = cv2.findContours(fg_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
